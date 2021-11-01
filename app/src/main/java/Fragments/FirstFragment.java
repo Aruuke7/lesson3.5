@@ -46,7 +46,7 @@ public class FirstFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putString("key1", text);
                     fragment.setArguments(bundle);
-                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new SecondFragment(),"tag").commit();
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment,"tag").commit();
                     Log.d("ololo", "onViewCreated: first передал "+text);
                 }
             }

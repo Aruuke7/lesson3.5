@@ -32,11 +32,12 @@ public class FourthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FourthFragment fragment = new FourthFragment();
+        FifthFragment fragment = new FifthFragment();
         Bundle bundle = getArguments();
         if (bundle != null) {
             text = bundle.getString("key","");
-            Log.d("ololo", "onViewCreated: "+text);
+            binding.textView4.setText(text);
+            Log.d("ololo", "onViewCreated: fourth получил "+text);
         }
 
 
@@ -45,8 +46,8 @@ public class FourthFragment extends Fragment {
             public void onClick(View v) {
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("key2",text);
-                Log.d("ololo", "onViewCreated: "+text);
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new FifthFragment()).commit();
+                Log.d("ololo", "onViewCreated: fourth передал"+text);
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
                 fragment.setArguments(bundle1);
             }
         });

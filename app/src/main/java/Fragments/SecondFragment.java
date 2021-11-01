@@ -32,7 +32,7 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() != null) {
             string = getArguments().getString("key1","");
-            binding.textView.setText(string);
+            binding.textView2.setText(string);
             Log.d("ololo", "onClick: second получил " + string);
         }else {
             Toast.makeText(this.getContext(), "getArguments is null", Toast.LENGTH_SHORT).show();
@@ -45,9 +45,8 @@ public class SecondFragment extends Fragment {
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("key2",string);
                 Log.d("ololo", "onViewCreated: отправил "+string);
-                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new ThirdFragment(),"tag").commit();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment,"tag").commit();
                 fragment.setArguments(bundle1);
-
             }
         });
     }

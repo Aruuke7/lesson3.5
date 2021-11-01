@@ -5,7 +5,7 @@
     tools:context="Fragments.SecondFragment">
 
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/text_view2"
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="85dp"

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,15 +33,17 @@ public class ThirdFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
            text = bundle.getString("key2","");
+           binding.textView3.setText(text);
+            Log.d("ololo", "onClick: third получил " + text);
 
         }
 
         binding.btnThird.setOnClickListener(v -> {
             Bundle bundle1 = new Bundle();
             bundle1.putString("key",text);
-            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new FourthFragment()).commit();
+            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
             fragment.setArguments(bundle1);
-
+            Log.d("ololo", "onClick: third передал " + text);
         });
     }
 }
