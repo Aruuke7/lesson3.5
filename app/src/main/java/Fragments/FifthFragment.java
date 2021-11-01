@@ -24,7 +24,7 @@ public class FifthFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Bundle bundle = getArguments();
         if (bundle != null) {
-            String string = bundle.getString("key", "");
+            String string = bundle.getString("key2", "");
             binding.textView.setText(string);
         }
 
